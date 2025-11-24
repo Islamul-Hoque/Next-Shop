@@ -71,7 +71,7 @@ const { signInUser, googleSignIn, setUser } = useContext(AuthContext);
 
                             <div className="flex justify-end text-sm">  <div className="text-gradient hover:link" > Forgot Password?</div></div>
 
-                            <button type="submit" className="btn btn-primary mt-4">Login</button>
+                            <button type="submit" className="btn-primary-w-full mt-4">Login</button>
                         </fieldset>
                     </form>
                     <p className="text-gray-500  text-center"> Don’t have an account?{" "} <Link href="/register" className="text-gradient font-medium hover:link"> Sign Up </Link></p>

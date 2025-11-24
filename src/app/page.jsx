@@ -1,7 +1,12 @@
-import Image from "next/image";
+import Hero from '@/Components/Hero';
+import React from 'react';
 
-export default function Home() {
+const HomeLayout = () => {
   return (
-    <h1>Alhamdulillah</h1>
+    <div>
+      <Hero/>
+    </div>
   );
-}
+};
+
+export default HomeLayout;

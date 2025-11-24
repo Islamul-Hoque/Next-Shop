@@ -74,7 +74,7 @@ const Signup = () => {
 
                             { error && <p className='text-red-500 text-[0.8rem]'> {error} </p> }
 
-                            <button type="submit" className="btn btn-primary mt-4">Sign Up</button>
+                            <button type="submit" className="btn-primary-w-full mt-4">Sign Up</button>
                         </fieldset>
                     </form>
 
