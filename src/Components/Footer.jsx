@@ -44,33 +44,16 @@ export default function Footer() {
         {/* Social Media & Newsletter (Optional) Section */}
         <div className="space-y-4">
           <h3 className="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#632ee3] transition-colors duration-200">
-              <FaFacebookF size={24} />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#632ee3] transition-colors duration-200">
-              <FaTwitter size={24} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#632ee3] transition-colors duration-200">
-              <FaInstagram size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#632ee3] transition-colors duration-200">
-              <FaLinkedinIn size={24} />
-            </a>
-          </div>
-          {/* Optional Newsletter Signup
-          <div className="mt-6">
-            <p className="text-gray-400 text-sm mb-2">Subscribe to our newsletter for updates:</p>
-            <form className="flex">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="input input-bordered input-sm w-full max-w-xs bg-gray-700 border-gray-600 text-white focus:border-[#632ee3]" 
-              />
-              <button type="submit" className="btn-primary ml-2">Subscribe</button>
-            </form>
-          </div>
-          */}
+
+
+<div className="flex space-x-4">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] transform transition duration-300 hover:scale-125"><FaFacebookF size={24} /></a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#1DA1F2] transform transition duration-300 hover:scale-125"><FaTwitter size={24} /></a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] transform transition duration-300 hover:scale-125"><FaInstagram size={24} /></a>
+    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] transform transition duration-300 hover:scale-125"><FaLinkedinIn size={24} /></a>
+</div>
+
+
         </div>
       </div>
 
