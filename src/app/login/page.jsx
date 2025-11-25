@@ -1,22 +1,34 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { AuthContext } from "../../../Context/AuthProvider";
+import { toast } from "react-toastify";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
 import { FcGoogle } from "react-icons/fc";
-import { toast } from "react-toastify";
 import Link from "next/link";
-import { AuthContext } from "../../../Context/AuthProvider";
 
 const Login = () => {
-const { signInUser, googleSignIn, setUser } = useContext(AuthContext);
-
+    const { signInUser, googleSignIn, setUser } = useContext(AuthContext);
+    const router = useRouter();
+    const [mounted, setMounted] = useState(false);
+    const [redirectPath, setRedirectPath] = useState("/");
     const [show, setShow] = useState(false);
     const [error, setError] = useState("");
-    const router = useRouter();
-    const searchParams = useSearchParams();
-    const redirectPath = searchParams.get("from") || "/";
+
+  useEffect(() => {
+    setMounted(true); // ensures client-side only
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      const params = useSearchParams();
+      setRedirectPath(params.get("from") || "/");
+    }
+  }, [mounted]);
+
+  if (!mounted) return null;
 
     const handleLogin = (e) => {
     e.preventDefault();
