@@ -5,7 +5,7 @@ import { FaStar } from 'react-icons/fa';
 import { motion } from "framer-motion"; 
 
 const bestSellingProducts = [
-  { 
+{ 
     id: 101, 
     name: "Pro Wireless Headset X", 
     desc: "Noise cancellation, superior bass quality.", 
@@ -13,8 +13,8 @@ const bestSellingProducts = [
     rating: 4.5, 
     categoryName: "Audio & Music", 
     imgUrl: "/images/headset.jpg" 
-  },
-  { 
+},
+{ 
     id: 102, 
     name: "Classic Cotton T-Shirt", 
     desc: "Premium cotton, comfortable fit, available in all sizes.", 
@@ -22,8 +22,8 @@ const bestSellingProducts = [
     rating: 4.0, 
     categoryName: "Apparel", 
     imgUrl: "/images/tshirt.jpg" 
-  },
-  { 
+},
+{ 
     id: 103, 
     name: "Ultra Slim Laptop", 
     desc: "Lightweight, long-lasting battery, 12th gen processor.", 
@@ -31,12 +31,12 @@ const bestSellingProducts = [
     rating: 4.9, 
     categoryName: "Electronics", 
     imgUrl: "/images/laptop.jpg" 
-  },
+},
 ];
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
 };
 
 const BestSellingProducts = () => {
@@ -59,7 +59,7 @@ const BestSellingProducts = () => {
                         <motion.div 
                             key={product.id}
                             variants={cardVariants}
-                            className="group block overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg transform transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-purple-200/50 cursor-pointer group-hover:delay-0">
+                            className="group flex flex-col items-center text-center p-6 rounded-xl border border-gray-200 bg-gray-50 shadow-md transform transition-all duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer">
                             
                             <div className="relative h-48 bg-gray-100 flex items-center justify-center">
                                 <span className="text-sm text-gray-400">[{product.name} Image]</span>

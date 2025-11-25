@@ -1,4 +1,5 @@
 import BestSellingProducts from '@/Components/BestSellingProducts';
+import CoreValues from '@/Components/CoreValues';
 import CustomerTestimonials from '@/Components/CustomerTestimonials';
 import FeaturedCategories from '@/Components/FeatureCard';
 import Hero from '@/Components/Hero';
@@ -11,6 +12,7 @@ const HomeLayout = () => {
       <FeaturedCategories/>
       <BestSellingProducts/>
       <CustomerTestimonials/>
+      <CoreValues/>
     </div>
   );
 };
