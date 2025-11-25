@@ -25,7 +25,7 @@ export default function Navbar() {
 
   const links = <>
       <li><Link href="/" className={activeClass("/")}>Home</Link></li>
-      <li><Link href="/products"className={activeClass("/products")}>Products</Link></li>
+      <li><Link href="/all-products"className={activeClass("/all-products")}>ALL Products</Link></li>
       <li><Link href="/about"className={activeClass("/about")}>About</Link></li>
       <li><Link href="/contact" className={activeClass("/contact")}>Contact</Link></li>
   </>

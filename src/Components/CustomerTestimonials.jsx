@@ -17,7 +17,7 @@ const testimonials = [
   { id: 6, name: "Liam Brown", photo: "https://randomuser.me/api/portraits/men/6.jpg", rating: 5, review: "The customer support is fantastic and product quality is top-notch. They truly care about their customers. Five stars!", position: "Freelancer", date: "2025-05-18" },
 ];
 
-export default function CustomerTestimonials() {
+const CustomerTestimonials = () => {
   return (
     <section className="py-20 px-6 md:px-16 bg-gradient-to-r from-purple-50 to-indigo-50 text-gray-800">
       <div className="container mx-auto max-w-6xl text-center mb-12">
@@ -80,3 +80,5 @@ export default function CustomerTestimonials() {
     </section>
   );
 }
+
+export default CustomerTestimonials;
