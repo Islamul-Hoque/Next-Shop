@@ -7,8 +7,8 @@ const HomeLayout = () => {
   return (
     <div>
       <Hero/>
-      {/* <FeaturedCategories/>
-      <BestSellingProducts/> */}
+      <FeaturedCategories/>
+      {/* <BestSellingProducts/> */}
     </div>
   );
 };
