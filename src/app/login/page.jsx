@@ -10,27 +10,20 @@ import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
 
 const Login = () => {
-    const { signInUser, googleSignIn, setUser } = useContext(AuthContext);
-    const router = useRouter();
-    const [mounted, setMounted] = useState(false);
-    const [redirectPath, setRedirectPath] = useState("/");
-    const [show, setShow] = useState(false);
-    const [error, setError] = useState("");
+  const { signInUser, googleSignIn, setUser } = useContext(AuthContext);
+  const router = useRouter();
+  const params = useSearchParams(); // ✅ hook top-level এ call করা হয়েছে
+
+  const [redirectPath, setRedirectPath] = useState("/");
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    setMounted(true); // ensures client-side only
-  }, []);
+    // ✅ useEffect এ শুধু params থেকে value নেওয়া হচ্ছে
+    setRedirectPath(params.get("from") || "/");
+  }, [params]);
 
-  useEffect(() => {
-    if (mounted) {
-      const params = useSearchParams();
-      setRedirectPath(params.get("from") || "/");
-    }
-  }, [mounted]);
-
-  if (!mounted) return null;
-
-    const handleLogin = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setError("");
 
@@ -41,11 +34,10 @@ const Login = () => {
     if (!password) return setError("Please enter your password.");
 
     signInUser(email, password)
-        .then(() => {
-            toast.success("Logged in successfully!");
-            router.push(redirectPath);
-        })
-        .catch((error) => {
+      .then(() => {
+        toast.success("Logged in successfully!");
+        router.push(redirectPath);
+      }).catch((error) => {
             if (error.code === "auth/invalid-credential")  setError("Email or password did not match!")
             else if (error.code === "auth/invalid-email")  setError("Please enter a valid email.")
             else if (error.code === "auth/user-not-found")   setError("No account found with this email.")
