@@ -8,7 +8,6 @@ const categories = [
     id: 1, 
     name: "Electronics", 
     description: "Smartphones, Laptops, Gadgets & Accessories.", 
-    // icon: FaLaptop,
     img: "https://i.ibb.co.com/3X8Hbbj/3659899.png",
     slug: "electronics" 
 },
@@ -16,15 +15,13 @@ const categories = [
     id: 2, 
     name: "Apparel", 
     description: "Trendy clothes for men and women.", 
-    // icon: FaTshirt, 
-     img: "https://i.ibb.co.com/8DJP6LZ1/12516315.png",
+    img: "https://i.ibb.co.com/8DJP6LZ1/12516315.png",
     slug: "apparel" 
 },
 { 
     id: 3, 
     name: "Audio & Music", 
-    description: "Headphones, Speakers, and Audio Gear.", 
-    // icon: FaHeadphones, 
+    description: "Headphones, Speakers, and Audio Gear.",  
     img: "https://i.ibb.co.com/JWX5sWy7/3791461.png",
     slug: "audio" 
 },
@@ -32,16 +29,14 @@ const categories = [
     id: 4, 
     name: "Photography", 
     description: "Cameras, Lenses, and Studio Equipment.", 
-    // icon: FaCamera, 
     img: "https://i.ibb.co.com/xqwBMrvg/17355423.png",
     slug: "photography" 
 },
 ];
 
-
 const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
 };
 
 const FeatureCard = () => {
@@ -55,15 +50,12 @@ const FeatureCard = () => {
                 </div>
 
                 <motion.div   className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"  initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.3 }} transition={{ staggerChildren: 0.15 }}> 
-                    
                     {categories.map((category) => (
                         <motion.div  key={category.id} variants={cardVariants} className="group block p-6 rounded-xl border border-gray-200 bg-white shadow-lg transform transition-all duration-300 ease-out hover:scale-[1.05] hover:shadow-purple-200/50 cursor-pointer group-hover:delay-0">
-                            
                             <div className="text-center">
                                 <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full transition-all duration-300 group-hover:scale-110">
-                                <img  src={category.img}  alt={category.name}  className="w-12 h-12 object-contain"  />
-                            </div>
-
+                                    <img  src={category.img}  alt={category.name}  className="w-12 h-12 object-contain"  />
+                                </div>
                                 <h3 className="text-xl font-bold text-gray-900 mb-2">{category.name}</h3>
                                 <p className="text-sm text-gray-600">{category.description}</p>
                             </div>

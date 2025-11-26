@@ -49,7 +49,6 @@ const BestSellingProducts = () => {
                 </div>
 
                 <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
-                    
                     {bestSellingProducts.map((product) => (
                         <motion.div key={product.id} variants={cardVariants} className="group flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-gray-50 shadow-md transform transition-all duration-300 hover:scale-[1.03] hover:shadow-lg cursor-pointer">
                             <div className="relative w-full h-[18.1rem] bg-gray-100 overflow-hidden">
@@ -72,7 +71,6 @@ const BestSellingProducts = () => {
                                 </div>
                             </div>
                         </motion.div>
-
                     ))}
                 </motion.div>
             </div>
