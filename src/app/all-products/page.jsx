@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
-const API_URL = "https://next-shop-api-server.vercel.app/all-products";
+// const API_URL = "https://next-shop-api-server.vercel.app/all-products";
 
 const AllProductsPage = async() => {
-    const res = await fetch(API_URL, { cache: "no-store" });
+    // const res = await fetch(API_URL, { cache: "no-store" });
+    // const res = await fetch('http://localhost:3000/all-products');
+    const res = await fetch('https://next-shop-api-server.vercel.app/all-products');
     const products = await res.json();
     const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
 
