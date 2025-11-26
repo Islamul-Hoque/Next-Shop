@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/Components/Navbar";
 import AuthProvider from "../../Context/AuthProvider";
 import Footer from "@/Components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-      // suppressHydrationWarning={true}
+      suppressHydrationWarning={true}
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}  
       >
         <AuthProvider>
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer/>
         </AuthProvider>
+        <ToastContainer />
       </body>
     </html>
   );

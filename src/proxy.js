@@ -4,11 +4,28 @@ import { AuthContext } from '../Context/AuthProvider'
 
 export function proxy(request) {
     // const { user } = useContext(AuthContext)
-    // return NextResponse.redirect(new URL('/login', request.url))
-     return NextResponse.redirect(new URL('/', request.url))
+    return NextResponse.redirect(new URL('/login', request.url))
 }
 
 export const config = {
-    matcher: '/about/:path*',
+    matcher: '/add/:path*',
     // matcher: ['/add-product/:path*', '/manage-products/:path*'],
 }
+
+// // proxy.js
+// import { NextResponse } from "next/server";
+
+// export function proxy(request) {
+//   const token = request.cookies.get("token")?.value;
+
+//   if (!token) {
+//     return NextResponse.redirect(new URL("/login", request.url));
+//   }
+
+//   return NextResponse.next();
+// }
+
+// export const config = {
+// //   matcher: ["/add-product/:path*", "/manage-products/:path*"],
+//   matcher: ["/dd/:path*", "/dd/:path*"],
+// };
