@@ -29,14 +29,13 @@ const ManageProducts = () => {
 
   if (!products.length) {
     return (
-      <div className="flex flex-col items-center justify-center py-20">
+      <div className="flex flex-col items-center justify-center py-20 bg-linear-to-r from-purple-50 to-indigo-50">
         <h2 className="text-4xl font-bold text-gray-800">No products found</h2>
         <p className="text-gray-500 mt-2">Start by adding your first product.</p>
         <Link href="/add-product" className="mt-4 btn-primary">  Add Product </Link>
       </div>
     );
   }
-
 
   const handleDeleteProduct = (id, title) => {
     const userEmail = user?.email || user?.providerData?.[0]?.email;
@@ -65,11 +64,11 @@ const ManageProducts = () => {
             Swal.fire("Error!", "Failed to delete product.", "error")
           })
       }
-    });
-  };
+    })
+  }
 
   return (
-    <div className="p-4 md:px-8 md:my-10">
+    <div className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
         <h1 className="text-4xl text-center font-extrabold text-gray-900 mb-12"> Manage <span className="text-gradient">Products</span> </h1>
 
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 max-w-7xl mx-auto">

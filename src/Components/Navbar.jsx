@@ -31,7 +31,7 @@ export default function Navbar() {
   </>
 
   return (
-    <div className="navbar bg-white  px-6 md:px-8 shadow-md sticky top-0 z-40">
+    <div className="navbar bg-white  px-6 md:px-8 shadow-md sticky top-0 z-50">
       <div className="navbar-start">
           <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost md:hidden"> <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg> </div>
@@ -53,18 +53,17 @@ export default function Navbar() {
                 </div>
           </div>
 
-            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white rounded-lg shadow-lg mt-3 w-60 p-3 space-y-1 z-50">
-              <li className="px-3 py-2 rounded cursor-default">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-56 shadow p-2">
+              <li className="">
                 <div className="flex flex-col">
                   <span className="font-semibold text-[1.1rem] text-gray-800">{user?.displayName || "User"}</span>
                   {user && <span className="text-sm text-black">{user?.email || user?.providerData?.[0]?.email }</span>}
                 </div>
               </li>
 
-              <li> <Link href="/add-product" className="block px-3 py-2 rounded hover:bg-gray-100 transition-colors">  Add Product  </Link> </li>
-              <li> <Link href="/manage-products" className="block px-3 py-2 rounded hover:bg-gray-100 transition-colors">  Manage Products </Link>
-              </li>
-              <li><button  onClick={handleLogOut}   className="w-full text-left px-3 py-2 rounded text-red-600 hover:bg-red-50 transition-colors" >  Logout</button></li>
+              <li > <Link href="/add-product" className="">  Add Product  </Link> </li>
+              <li > <Link href="/manage-products" className="">  Manage Products </Link></li>
+              <li><div onClick={handleLogOut}  className="text-red-600 hover:bg-red-50" > Logout</div></li>
             </ul>
 
               </div>

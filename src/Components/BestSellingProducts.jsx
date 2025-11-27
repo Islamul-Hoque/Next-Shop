@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import { FaStar } from 'react-icons/fa'; 
 import { motion } from "framer-motion"; 
 
@@ -41,11 +40,11 @@ const cardVariants = {
 
 const BestSellingProducts = () => {
     return (
-        <section className="py-20 px-6 md:px-16 bg-white text-gray-800"> 
+        <section className="pb-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800"> 
             <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Our Top <span className="text-gradient"> 3 Bestsellers</span></h2>
-                    <p className="text-gray-600 text-lg text-center w-[70%] mx-auto">Popular among our users. Explore these top selections even though they are currently out of stock</p>
+                    <p className="text-gray-600 text-lg text-center w-[90%] mx-auto">Popular among our users. Explore these top selections even though they are currently out of stock</p>
                 </div>
 
                 <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 

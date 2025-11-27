@@ -27,7 +27,7 @@ const aboutCards = [
 
 const About = () => {
     return (
-        <div className="py-20 px-6 md:px-16 bg-linear-to-br from-gray-50 via-white to-gray-100">
+        <div className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
             <div className="max-w-7xl mx-auto">
 
                 <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }} className="text-center mb-16" >
@@ -49,3 +49,5 @@ const About = () => {
 };
 
 export default About;
+
+

@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1b003a] text-white py-12 px-6 md:px-12 border-t border-purple-800">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[#1b003a] text-white py-12 px-6 md:px-16 border-t border-purple-800">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2">
@@ -39,7 +39,6 @@ const Footer = () => {
           <h3 className="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
           <div className="flex space-x-4">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1877F2] transform transition duration-300 hover:scale-125"><FaFacebookF size={24} /></a>
-            {/* <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#1DA1F2] transform transition duration-300 hover:scale-125"><FaTwitter size={24} /></a> */}
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white transform transition duration-300 hover:scale-125"><FaXTwitter size={24} /></a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] transform transition duration-300 hover:scale-125"><FaInstagram size={24} /></a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] transform transition duration-300 hover:scale-125"><FaLinkedinIn size={24} /></a>
@@ -47,9 +46,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-purple-700 pt-8 mt-12 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 NextShop. All rights reserved.</p>
-      </div>
+      <div className="border-t border-purple-700 pt-8 mt-12 text-center text-gray-500 text-sm"> <p>&copy; 2025 NextShop. All rights reserved.</p> </div>
     </footer>
   );
 }

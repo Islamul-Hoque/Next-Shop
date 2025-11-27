@@ -42,7 +42,7 @@ const cardVariants = {
 const FeatureCard = () => {
 
     return (
-        <section className="py-20 px-6 md:px-16 bg-gray-50 text-gray-800"> 
+        <section className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800">
             <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Explore Our <span className="text-gradient">Top Categories</span></h2>

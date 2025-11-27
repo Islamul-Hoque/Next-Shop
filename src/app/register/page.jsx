@@ -125,17 +125,17 @@ const Signup = () => {
                     <form onSubmit={ handleRegister }>
                         <fieldset className="fieldset">
                             <label className="label">Your Name</label>
-                            <input name='name' type="text" className="input bg-gray-50  w-full" placeholder="Enter your name" />
+                            <input name='name' type="text" className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your name" />
 
                             <label className="label">Photo URL</label>
-                            <input name='photo' type="text" className="input bg-gray-50 0 w-full" placeholder="Enter your photo URL" />
+                            <input name='photo' type="text" className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your photo URL" />
 
                             <label className="label">Email address</label>
-                            <input  name="email"  type="email" className="input bg-gray-50  w-full" placeholder="Enter your email address"  />
+                            <input  name="email"  type="email" className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your email address"  />
 
                             <div className="relative">
                                 <label className="label mb-[0.38rem] mt-2">Password</label>
-                                <input name="password" type={ show ? "text" : "password" } className="input bg-gray-50  w-full" placeholder="Enter your password" />
+                                <input name="password" type={ show ? "text" : "password" } className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" placeholder="Enter your password" />
                                 <span onClick={()=> setShow(!show) } className="absolute text-[1rem] right-4 top-[2.77rem] cursor-pointer z-50 " > { show ? <FaEye/> : <IoEyeOff/> }  </span>
                             </div>
 

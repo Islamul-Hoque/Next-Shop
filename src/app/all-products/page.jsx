@@ -1,24 +1,20 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
-// const API_URL = "https://next-shop-api-server.vercel.app/all-products";
-
 const AllProductsPage = async() => {
-    // const res = await fetch(API_URL, { cache: "no-store" });
-    // const res = await fetch('http://localhost:3000/all-products');
     const res = await fetch('https://next-shop-api-server.vercel.app/all-products');
     const products = await res.json();
     const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
 
 return (
-    <div className="p-4 md:p-8">
-        <div className="text-center mb-10">
-            <h1 className="text-4xl font-extrabold text-gray-900 mb-3"> Discover Our <span className="text-gradient">Product Collection</span> </h1>
-            <p className="text-md lg:text-lg text-gray-600 max-w-2xl mx-auto"> Find your perfect match. Filter by category or use the search bar to explore our entire catalog.</p>
+    <div className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
+        <div className="text-center mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"> Discover Our <span className="text-gradient">Product Collection</span> </h1>
+            <p className="text-md lg:text-lg text-gray-600 w-[90%] text-center mx-auto"> Find your perfect match. Filter by category or use the search bar to explore our entire catalog.</p>
         </div>
 
-        <div className="mb-8 flex justify-center gap-8">
-            <label className="input w-[12rem] md:w-[20rem] flex items-center gap-2">
+        <div className="mb-12 flex justify-center gap-8">
+            <label className="input w-[12.1rem] md:w-[20rem] flex items-center gap-2">
                 <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">  <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"> <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /> </g> </svg>
                 <input   type="search" className="outline-none bg-transparent w-full" placeholder="search Apps" required />
             </label>

@@ -36,11 +36,11 @@ const cardVariants = {
 
 const CoreValues = () => {
     return (
-        <section className="py-20 px-6 md:px-16 bg-white text-gray-800">
+        <section className="pb-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50 text-gray-800">
             <div className="container mx-auto max-w-6xl">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-extrabold text-gray-900 mb-3"> Our <span className="text-gradient">Core Values</span> </h2>
-                    <p className="text-gray-600 text-lg max-w-2xl mx-auto">  Commitment to quality, reliability, and unparalleled customer service. </p>
+                    <p className="text-gray-600 text-lg w-[90%] mx-auto"> Commitment to quality, reliability, and unparalleled customer service. </p>
                 </div>
 
                 <motion.div  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"initial="hidden"  whileInView="visible" viewport={{ once: false, amount: 0.4 }} transition={{ staggerChildren: 0.15 }}> 
