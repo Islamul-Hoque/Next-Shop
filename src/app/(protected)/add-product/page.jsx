@@ -15,18 +15,20 @@ const AddProduct = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();
 
+    const imageUrl = e.target.image.value.trim()
     const newProductData = {
         title: e.target.title.value,
         price: parseFloat(e.target.price.value),
         desc: e.target.desc.value,
         full_description: e.target.full_description.value,
         category: e.target.category.value,
-        image: e.target.image.value,
+        image: imageUrl || "https://i.ibb.co.com/xSY1MdVy/Gemini-Generated-Image-kbgxx4kbgxx4kbgx.png",
         brand: e.target.brand.value,
         stock: parseInt(e.target.stock.value),
         sku: e.target.sku.value,
         features: e.target.features.value.split(",").map(f => f.trim()),
         rating: 0,
+        createdAt: new Date().toISOString(),
         userEmail: user?.email || user?.providerData?.[0]?.email
     };
 
@@ -75,7 +77,7 @@ const AddProduct = () => {
                     </div>
                     <div className="md:col-span-2">
                         <label className="label font-semibold mb-1">Image URL</label>
-                        <input type="text" name="image" placeholder="Enter image URL" className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" required />
+                        <input type="text" name="image" placeholder="Enter image URL (Optional)" className="input border-slate-300 rounded-[0.4rem] px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-purple-400 w-full" />
                     </div>
                     <div className="md:col-span-2">
                         <label className="label font-semibold mb-1">Features (comma separated)</label>

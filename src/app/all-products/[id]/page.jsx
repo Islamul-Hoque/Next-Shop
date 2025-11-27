@@ -1,11 +1,12 @@
 import { FaStar } from "react-icons/fa";
 import Link from "next/link";
+import { MdOutlineDateRange } from "react-icons/md";
+import { format } from "date-fns";
 
 const ProductDetailsPage = async (props) => {
   const params = await props.params;  
   const { id } = params;
-  const res = await fetch(`https://next-shop-api-server.vercel.app/all-products/${id}`
-)
+  const res = await fetch(`https://next-shop-api-server.vercel.app/all-products/${id}`)
 
   const data = await res.json();
 
@@ -19,7 +20,10 @@ const ProductDetailsPage = async (props) => {
 
         <div className="card-body p-6">
           <div className="flex flex-col gap-4">
-            <h1 className="text-3xl font-bold text-gray-900">{data.title}</h1>
+            <div className="flex justify-between items-center">
+              <h1 className="text-3xl font-bold text-gray-900">{data.title}</h1>
+              <div className="flex items-center gap-1 text-xs text-gray-600 "> <MdOutlineDateRange className=" text-sm" /> {format(new Date(data.createdAt), "dd/MM/yyyy")} </div>
+            </div>
 
             <div className="flex items-center justify-between text-gray-700">
               <p className="text-purple-700 font-extrabold text-2xl"> ${data.price.toFixed(2)} </p>
@@ -39,7 +43,7 @@ const ProductDetailsPage = async (props) => {
               <div className="mt-4">
                 <h3 className="font-semibold text-gray-800 mb-2">Features:</h3>
                 <ul className="list-disc list-inside text-gray-700 space-y-1">
-                  {data.features.map((f, idx) => ( <li key={idx}>{f}</li> ))}
+                  {data.features.map((feature, index) => ( <li key={index}>{feature}</li> ))}
                 </ul>
               </div>
             )}
