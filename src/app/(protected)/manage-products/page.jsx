@@ -29,11 +29,13 @@ const ManageProducts = () => {
 
   if (!products.length) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 bg-linear-to-r from-purple-50 to-indigo-50">
+      <PrivateRoute>
+        <div className="flex flex-col items-center justify-center py-20 bg-linear-to-r from-purple-50 to-indigo-50">
         <h2 className="text-4xl font-bold text-gray-800">No products found</h2>
         <p className="text-gray-500 mt-2">Start by adding your first product.</p>
         <Link href="/add-product" className="mt-4 btn-primary">  Add Product </Link>
       </div>
+      </PrivateRoute>
     );
   }
 
