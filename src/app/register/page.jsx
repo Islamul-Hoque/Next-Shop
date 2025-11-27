@@ -1,56 +1,3 @@
-// "use client";
-// import { useContext, useState } from "react";
-// import { useRouter } from "next/navigation";
-// import Link from "next/link";
-// import { FaEye } from "react-icons/fa";
-// import { IoEyeOff } from "react-icons/io5";
-// import { FcGoogle } from "react-icons/fc";
-// import { toast } from "react-toastify";
-// import { AuthContext } from "../../../Context/AuthProvider";
-
-// const Signup = () => {
-//     const { createUser, googleSignIn, updateUser, setUser } = useContext(AuthContext);
-//     const [show, setShow] = useState(false);
-//     const [error, setError] = useState("");
-//     const router = useRouter();
-
-//     const handleRegister = async (e) => {
-//         e.preventDefault();
-//         setError("");
-//         const displayName = e.target.name.value;
-//         const photoURL = e.target.photo.value;
-//         const email = e.target.email.value;
-//         const password = e.target.password.value;
-
-//         if (!displayName.trim()) return setError("Please enter your name.");
-//         if (!email) return setError("Please enter your email address.");
-//         if (!password) return setError("Please enter your password.");
-//         if (password.length < 6) return setError("Password must be at least 6 characters.");
-//         if (!/[A-Z]/.test(password)) return setError("Password must include at least one uppercase letter.");
-//         if (!/[a-z]/.test(password)) return setError("Password must include at least one lowercase letter.");
-
-//         try {
-//             const result = await createUser(email, password);
-//             await updateUser({ displayName, photoURL });
-//             setUser({ ...result.user, displayName, photoURL });
-//             toast.success("Account created successfully!");
-//             router.push("/");
-//         } catch (err) {
-//         if (err.code === "auth/email-already-in-use") setError("This email is already registered!");
-//         else setError("Something went wrong. Please try again later.");
-//         }
-// };
-
-//     const handleGoogleSignIn = async () => {
-//     try {
-//         const result = await googleSignIn();
-//         setUser(result.user);
-//         toast.success("Signed up with Google successfully!");
-//         router.push("/");
-//     } catch (err) {toast.error(err.message); }
-// };
-
-
 "use client";
 
 import { useContext, useState } from "react";
@@ -88,10 +35,6 @@ const Signup = () => {
       await updateUser({ displayName, photoURL });
       setUser({ ...result.user, displayName, photoURL });
 
-      // ⬇️ token set after new user created
-      const token = await result.user.getIdToken();
-      document.cookie = `token=${token}; path=/;`;
-
       toast.success("Account created successfully!");
       router.push("/");
     } catch (err) {
@@ -105,10 +48,6 @@ const Signup = () => {
     try {
       const result = await googleSignIn();
       setUser(result.user);
-
-      // ⬇️ token set for Google signup
-      const token = await result.user.getIdToken();
-      document.cookie = `token=${token}; path=/;`;
 
       toast.success("Signed up with Google successfully!");
       router.push("/");

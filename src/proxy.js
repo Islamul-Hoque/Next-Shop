@@ -8,24 +8,7 @@ export function proxy(request) {
 }
 
 export const config = {
-    matcher: '/add/:path*',
+    matcher: '/abc/:path*',
     // matcher: ['/add-product/:path*', '/manage-products/:path*'],
 }
 
-// // proxy.js
-// import { NextResponse } from "next/server";
-
-// export function proxy(request) {
-//   const token = request.cookies.get("token")?.value;
-
-//   if (!token) {
-//     return NextResponse.redirect(new URL("/login", request.url));
-//   }
-
-//   return NextResponse.next();
-// }
-
-// export const config = {
-// //   matcher: ["/add-product/:path*", "/manage-products/:path*"],
-//   matcher: ["/dd/:path*", "/dd/:path*"],
-// };

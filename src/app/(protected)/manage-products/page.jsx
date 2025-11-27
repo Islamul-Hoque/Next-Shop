@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import { AuthContext } from "../../../../Context/AuthProvider";
 import Loading from "../../../Components/Loading"
+import PrivateRoute from "@/Components/PrivateRoute/PrivateRoute";
 
 const ManageProducts = () => {
   const [products, setProducts] = useState([]);
@@ -14,8 +15,14 @@ const ManageProducts = () => {
   const { user, loading } = useContext(AuthContext);
 
   useEffect(() => {
+    if (!user) { setFetching(false)
+        return;
+  }
     const userEmail = user?.email || user?.providerData?.[0]?.email;
-    // if (!userEmail) return;
+    if (!userEmail) {
+    setFetching(false);
+    return;
+  }
     setFetching(true);
     axios.get(`https://next-shop-api-server.vercel.app/manage-products?email=${userEmail}`)
       .then((res) => {
@@ -23,7 +30,7 @@ const ManageProducts = () => {
         setFetching(false);
       })
       .catch(() => setFetching(false));
-  }, [user?.email, user?.providerData ]);
+  }, [user]);
 
   if (loading || fetching ) return <Loading/>
 
@@ -68,6 +75,7 @@ const ManageProducts = () => {
   }
 
   return (
+    <PrivateRoute>
     <div className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
         <h1 className="text-4xl text-center font-extrabold text-gray-900 mb-12"> Manage <span className="text-gradient">Products</span> </h1>
 
@@ -95,7 +103,7 @@ const ManageProducts = () => {
             </div>))}
         </div>
     </div>
-
+  </PrivateRoute>
   );
 };
 

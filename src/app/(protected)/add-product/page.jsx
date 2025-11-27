@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import { AuthContext } from "../../../../Context/AuthProvider";
 import Loading from "../../../Components/Loading"
+import PrivateRoute from "@/Components/PrivateRoute/PrivateRoute";
 
 const AddProduct = () => {
     const categories = ["Electronics", "Home & Furniture", "Audio & Music", "Apparel", "Photography", "Accessories"];
@@ -38,6 +39,7 @@ const AddProduct = () => {
 }
 
     return (
+        <PrivateRoute>
         <div className="py-20 px-6 md:px-16 bg-linear-to-r from-purple-50 to-indigo-50">
             <div className="mx-auto p-8 rounded-2xl shadow-sm bg-white border border-gray-200 py-16">
             <h2 className="text-[2rem] md:text-[2.8rem] font-bold text-center mb-8 mt-3 text-gray-900">Add <span className='text-gradient'>Product</span></h2>
@@ -92,6 +94,7 @@ const AddProduct = () => {
             </form>
         </div>
     </div>
+    </PrivateRoute>
     );    
 };
 
