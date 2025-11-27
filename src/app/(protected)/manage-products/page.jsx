@@ -15,14 +15,7 @@ const ManageProducts = () => {
   const { user, loading } = useContext(AuthContext);
 
   useEffect(() => {
-    if (!user) { setFetching(false)
-        return;
-  }
     const userEmail = user?.email || user?.providerData?.[0]?.email;
-    if (!userEmail) {
-    setFetching(false);
-    return;
-  }
     setFetching(true);
     axios.get(`https://next-shop-api-server.vercel.app/manage-products?email=${userEmail}`)
       .then((res) => {
