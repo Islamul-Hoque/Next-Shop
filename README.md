@@ -101,7 +101,7 @@ DB_USER=your_db_username
 DB_PASS=your_db_password
 ```
 
-### 5. Start Development Servers
+### 4. Start Development Servers
 **Backend:**
 
 ```
