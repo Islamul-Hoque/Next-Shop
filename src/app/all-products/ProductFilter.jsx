@@ -12,9 +12,9 @@ import { format } from "date-fns";
 
     return (
         <div>
-            <div className="text-center mb-10">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3"> Discover Our <span className="text-gradient">Product Collection</span> </h1>
-                <p className="text-md lg:text-lg text-gray-600 max-w-2xl mx-auto"> Find your perfect match. Filter by category or use the search bar to explore our entire catalog.</p>
+            <div className="text-center mb-10 -mt-2">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3">Explore Our <span className="text-gradient">Exclusive Products</span> </h1>
+                <p className="text-md lg:text-lg text-gray-600 w-[90%] text-center mx-auto"> Find your perfect match. Filter by category or use the search bar to explore our entire catalog.</p>
             </div>
             <div className="mb-12 flex justify-center gap-8">
                 <label className="input w-[12.1rem] md:w-[20rem] flex items-center gap-2">

@@ -1,11 +1,11 @@
-# NextShop — Modern Full-Stack E-Commerce Experience
+# NextShop — Full-Stack E-Commerce Website with Next.js & MongoDB
 
 ## Description
-**NextShop** is a streamlined product management and browsing platform where users can explore items, view detailed product information, and manage their own listings after logging in. The platform focuses on delivering a clean and fast shopping experience, enabling users to add products and keep everything organized through a simple and intuitive interface.
+**NextShop** is a modern full‑stack e‑commerce website that makes shopping and product management simple. Users can browse, search, and filter products with detailed info and images to guide decisions.Sellers get secure authentication with dashboards to add and manage products. The platform focuses on speed, clean design, and intuitive navigation for a seamless experience.
 
 ---
 
-**🔗 Live Demo:** [NextShop Live](https://next-shop-1aqj.vercel.app/)
+**🔗 Live Demo:** [NextShop (Vercel)](https://next-shop-1aqj.vercel.app/)
 
 ---
 
@@ -29,10 +29,12 @@ Backend:
 
 Utilities:
   - React Toastify (notifications)
+  - date-fns (date formatting)
+  - SweetAlert2 (confirmation alerts for product deletion)
 
 ---
 
-## 🌐 API Endpoints (From Your Backend)
+## 🌐 API Endpoints (Backend)
 
 ```
 GET /all-products        → Fetch all products
@@ -47,13 +49,13 @@ DELETE /manage-products/:id → Delete product by ID
 
 ## 🧩 Key Features
 
-* Fully responsive UI (mobile-first)
-* Dynamic Product Listing
+* Fully responsive UI (optimized for mobile, tablet, and desktop breakpoints)
+* Dynamic product listing with category & search filters
 * Product Details Page
-* Add & Manage Products (Logged-in Users Only)
-* Firebase Auth: Google + Email
-* Clean, gradient-driven UI
-* Secure logout + Toast notifications
+* Add & manage products (for logged‑in users)
+* Firebase Authentication (Google & Email login)
+* Clean, gradient‑driven interface with modern styling
+* Secure logout flow with toast notifications
 
 ---
 
@@ -81,7 +83,7 @@ npm install
 
 ### 3. Setup Environment Variables
 
-Create `.env`:
+Frontend `.env` (Next.js):
 
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
@@ -91,9 +93,8 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=YOUR_FIREBASE_STORAGE_BUCKET
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=YOUR_FIREBASE_MESSAGING_SENDER_ID
 NEXT_PUBLIC_FIREBASE_APP_ID=YOUR_FIREBASE_APP_ID
 ```
-### 4. Setup Environment Variables
 
-Backend `.env`:
+Backend `.env` (Express + MongoDB):
 
 ```
 DB_USER=your_db_username
@@ -132,7 +133,26 @@ npm start
 
 Deploy on:
 
-* **Vercel** (official Next.js platform)
+* **Vercel** (official Next.js platform, GitHub integration for auto deploys)
 * **Netlify** (optional)
 
 ---
+
+## 📄 License
+This project is intended solely for educational and portfolio purposes, not for commercial use.
+
+--- 
+
+## 👤 Author
+
+**Islamul Hoque**  
+*MERN Stack Web Developer*  
+
+📍 **Chattogram, Bangladesh**  
+📧 **islamulhoque2006@gmail.com**  
+
+🔗 **Social Links:**  
+- [GitHub](https://github.com/Islamul-Hoque)  
+- [LinkedIn](https://linkedin.com/in/Islamul-Hoque)  
+- [Facebook](https://facebook.com/ISLAMUL.HOQUE.ISHFAK.OFFICIAL)  
+- [Twitter](https://twitter.com/ISHFAK2003)
