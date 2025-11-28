@@ -12,6 +12,10 @@ import { format } from "date-fns";
 
     return (
         <div>
+            <div className="text-center mb-10">
+                <h1 className="text-4xl font-extrabold text-gray-900 mb-3"> Discover Our <span className="text-gradient">Product Collection</span> </h1>
+                <p className="text-md lg:text-lg text-gray-600 max-w-2xl mx-auto"> Find your perfect match. Filter by category or use the search bar to explore our entire catalog.</p>
+            </div>
             <div className="mb-12 flex justify-center gap-8">
                 <label className="input w-[12.1rem] md:w-[20rem] flex items-center gap-2">
                     <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">  <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor"> <circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /> </g> </svg>
